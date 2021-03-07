@@ -10,8 +10,10 @@ app.use(express.urlencoded({ extended: true }));
 const port = 3000;
 require('./db');
 
+app.use(express.static(_.join([__dirname, 'public'], '/')));
+
 app.get('/', (req, res) => {
-  res.sendFile(_.join([__dirname, 'index.html'], '/'));
+  res.sendFile(_.join([__dirname, 'public', 'index.html'], '/'));
 });
 
 app.post('/', (req, res) => {
@@ -20,8 +22,8 @@ app.post('/', (req, res) => {
   const newPost = new Post({ content });
 
   newPost.save((err) => {
-    if (err) console.log(err);
-    res.redirect('/');
+    if (err) res.sendStatus(500);
+    else res.sendStatus(200);
   });
 });
 
