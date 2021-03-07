@@ -1,6 +1,5 @@
 const express = require('express');
 const mongooseModel = require('mongoose').model;
-const alert = require('alert');
 const _ = require('lodash');
 
 const app = express();
@@ -24,6 +23,20 @@ app.post('/', (req, res) => {
   newPost.save((err) => {
     if (err) res.sendStatus(500);
     else res.sendStatus(200);
+  });
+});
+
+app.get('/messages', (req, res) => {
+  const Post = mongooseModel('Post');
+  Post.find({}, (err, docs) => {
+    if (err) res.sendStatus(500);
+    else {
+      const posts = docs.map((ele) => ({
+        data: ele.content,
+        date: ele.createdAt,
+      }));
+      res.json(posts);
+    }
   });
 });
 

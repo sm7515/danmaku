@@ -24,7 +24,6 @@
     "dotenv": "^8.2.0"
   },
   "dependencies": {
-    "alert": "^5.0.10",
     "express": "^4.17.1",
     "mongoose": "^5.11.19"
   }
