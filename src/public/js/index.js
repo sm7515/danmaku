@@ -2,7 +2,7 @@ import Danmaku from './danmaku.js';
 import init from './utils/init.js';
 
 async function getData() {
-  const response = await fetch('http://localhost:3000/messages', {
+  const response = await fetch('https://danmakuwall.herokuapp.com/messages', {
     method: 'GET',
   });
   return response.json();
