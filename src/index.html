@@ -20,7 +20,7 @@
         const formData = new FormData(form);
         const content = { content: formData.get('content') };
 
-        fetch('http://localhost:3000', {
+        fetch('https://danmakuwall.herokuapp.com', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
