@@ -7,12 +7,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 const port = 3000;
-require('./db');
+require('./server/db');
 
-app.use(express.static(_.join([__dirname, 'public'], '/')));
-
+app.use('/public', express.static(_.join([__dirname, 'public'], '/')));
 app.get('/', (req, res) => {
-  res.sendFile(_.join([__dirname, 'public', 'index.html'], '/'));
+  res.sendFile(_.join([__dirname, 'index.html'], '/'));
 });
 
 app.post('/', (req, res) => {

@@ -1,5 +1,5 @@
 export default function init(danmaku, container, data) {
-  for (let i = 0; i < 500; i++) {
+  for (let i = 0; i < data.length; i++) {
     const index = parseInt(Math.random() * data.length);
     danmaku.add({
       msg: data[index].data,
