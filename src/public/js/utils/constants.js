@@ -1,4 +1,4 @@
-export const SPEED_ARG = 0.0058;
+export const SPEED_ARG = 0.008;
 
 export const DEFAULT_TRACK_SIZE = 12;
 

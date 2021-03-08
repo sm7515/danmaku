@@ -33,6 +33,7 @@ input[type='text'] {
   color: white;
   font-family: 'DotGothic16', sans-serif;
   margin-right: 10px;
+  border-radius: 0;
 }
 input[type='text']::placeholder {
   color: white;
